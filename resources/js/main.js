@@ -1,0 +1,1 @@
+console.log('Slim3 Boilerplate script');

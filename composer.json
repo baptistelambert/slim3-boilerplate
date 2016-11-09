@@ -1,0 +1,25 @@
+{
+    "name": "baptistelambert/slim-test",
+    "authors": [
+        {
+            "name": "baptistelambert",
+            "email": "bapthf2@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\": "src/"
+        }
+    },
+    "require": {
+        "slim/slim": "^3.5",
+        "slim/twig-view": "^2.1"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^3.1",
+        "phpunit/phpunit": "^4.8"
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public/"
+    }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "slim3-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for Slim3 PHP micro framework",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

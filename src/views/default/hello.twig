@@ -1,0 +1,9 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    {% if name is not null %}
+        <p>Hello {{ name }} !</p>
+    {% else %}
+        <p>I can't salute you if you don't give me your name !</p>
+    {% endif %}
+{% endblock %}
