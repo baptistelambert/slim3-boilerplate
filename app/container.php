@@ -2,6 +2,7 @@
 
 $container = $app->getContainer();
 
+// Twig
 $container['view'] = function ($container) {
     $dir = dirname(__DIR__);
     $view = new \Slim\Views\Twig($dir . '/src/views', [
@@ -19,8 +20,27 @@ $container['view'] = function ($container) {
     return $view;
 };
 
+// Doctrine Entity Manager
+$container['em'] = function ($container) {
+    $settings = $container->get('settings')['doctrine'];
+
+    $config = \Doctrine\ORM\Tools\Setup::createAnnotationMetadataConfiguration(
+        $settings['meta']['entity_path'],
+        $settings['meta']['auto_generate_proxies'],
+        $settings['meta']['proxy_dir'],
+        $settings['meta']['cache'],
+        false
+    );
+
+    return \Doctrine\ORM\EntityManager::create($settings['connection'], $config);
+};
+
 // Controllers
 
 $container['DefaultController'] = function ($container) {
     return new \Src\Controllers\DefaultController($container);
+};
+
+$container['BookController'] = function ($container) {
+    return new \Src\Controllers\BookController($container);
 };
