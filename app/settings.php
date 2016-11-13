@@ -2,7 +2,13 @@
 
 $settings = [];
 
-$settings['settings']['debug'] = true;
+$settings = [
+    'settings' => [
+        'debug' => true,
+        'determineRouteBeforeAppMiddleware' => true,
+        'addContentLengthHeader' => false,
+    ],
+];
 
 $settings['settings']['doctrine'] = [
     'meta' => [

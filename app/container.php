@@ -35,6 +35,14 @@ $container['em'] = function ($container) {
     return \Doctrine\ORM\EntityManager::create($settings['connection'], $config);
 };
 
+// Helpers
+
+$container['validator'] = function ($container) {
+    return new \Src\Helpers\Validator\Validator;
+};
+
+\Respect\Validation\Validator::with('Src\\Helpers\\Validator\\Rules\\'); // register custom rules for the validator
+
 // Controllers
 
 $container['DefaultController'] = function ($container) {
@@ -43,4 +51,8 @@ $container['DefaultController'] = function ($container) {
 
 $container['BookController'] = function ($container) {
     return new \Src\Controllers\BookController($container);
+};
+
+$container['AuthController'] = function ($container) {
+    return new \Src\Controllers\AuthController($container);
 };

@@ -1,0 +1,19 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    {% if errors is defined %}
+        {{ errors|json_encode }}
+    {% endif %}
+    <form action="{{ path_for('user_signup') }}" method="post" autocomplete="off">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+
+        <input type="submit" value="Sign up">
+    </form>
+{% endblock %}

@@ -14,7 +14,8 @@
     "require": {
         "slim/slim": "^3.5",
         "slim/twig-view": "^2.1",
-        "doctrine/orm": "^2.5"
+        "doctrine/orm": "^2.5",
+        "respect/validation": "^1.1"
     },
     "require-dev": {
         "symfony/var-dumper": "^3.1",
